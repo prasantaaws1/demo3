@@ -7,11 +7,14 @@ pipeline{
         maven "Maven3"
     }
     stages{
-        stage('Example Build') { 
+        stage('Clean Work Space') { 
             steps {
-                echo 'Hello, Maven'
-                sh 'mvn --version'
-                sh 'mvn clean package'
+                cleanWs()
+            }
+        }
+        stage('Code CheckOut') { 
+            steps {
+                git branch: 'main', crdentialsId: 'github', url: 'https://github.com/prasantaaws1/demo3.git'
             }
         }
     }

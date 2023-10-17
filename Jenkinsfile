@@ -14,7 +14,7 @@ pipeline{
         }
         stage('Code CheckOut') { 
             steps {
-                git branch: 'main', crdentialsId: 'github', url: 'https://github.com/prasantaaws1/demo3.git'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/prasantaaws1/demo3.git'
             }
         }
     }

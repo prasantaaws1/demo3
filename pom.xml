@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.cloudtechmasters</groupId>
-	<artifactId>realtime-project-demo</artifactId>
+	<artifactId>demoapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>realtime-project-demo</name>
+	<name>demoapp</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>

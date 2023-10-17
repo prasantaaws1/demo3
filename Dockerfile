@@ -1,4 +1,13 @@
-FROM amazoncorretto:11-alpine-jdk
-MAINTAINER baeldung.com
-COPY target/docker-message-server-1.0.0.jar message-server-1.0.0.jar
-ENTRYPOINT ["java","-jar","/message-server-1.0.0.jar"]
+FROM adoptopenjdk/openjdk11:alpine-jre
+
+# Refer to Maven build -> finalName
+ARG JAR_FILE=target/spring-boot-web.jar
+
+# cd /opt/app
+WORKDIR /opt/app
+
+# cp target/spring-boot-web.jar /opt/app/app.jar
+COPY ${JAR_FILE} app.jar
+
+# java -jar /opt/app/app.jar
+ENTRYPOINT ["java","-jar","app.jar"]

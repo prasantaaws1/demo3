@@ -6,7 +6,7 @@ pipeline{
         jdk "Java17"
         maven "Maven3"
     }
-    environments {
+    environment {
         APP_NAME = "demo3"
         RELEASE = "1.0.0"
         IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"

@@ -1,11 +1,13 @@
 pipeline{
-    agent any 
-    environment{
-        VERSION = "${env.BUILD_ID}"
+    agent {
+        label "jenkins-agent"
+    }
+    tools {
+        jdk "Java17"
+        maven "Maven3"
     }
     stages{
-        stage('Example Build') {
-            agent { docker 'maven:3-alpine' } 
+        stage('Example Build') { 
             steps {
                 echo 'Hello, Maven'
                 sh 'mvn --version'
